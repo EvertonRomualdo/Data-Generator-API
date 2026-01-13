@@ -1,0 +1,22 @@
+{
+	"info": {
+		"_postman_id": "3b5c316a-3a10-4b03-9dfd-e3a296a8ed3c",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "50626568-3b5c316a-3a10-4b03-9dfd-e3a296a8ed3c"
+	},
+	"item": [
+		{
+			"name": "Create CPF",
+			"id": "6748546e-1a4b-453c-9d33-58215c7167c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
