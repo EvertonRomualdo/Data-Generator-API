@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "a073a273-ede7-494d-84b3-2237da355a94",
+		"name": "Data Generator API",
+		"description": "API for generating and validating Brazilian data such as CPF (Cadastro de Pessoas Físicas)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CPF",
+			"item": [
+				{
+					"name": "Generate CPF",
+					"id": "ef9d88bc-9e4e-4c51-b8ef-1d3188430fae",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/cpf/generate",
+						"description": "Generates a valid random CPF number"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Multiple CPFs",
+					"id": "14e2b518-649b-43ab-80d1-ddf5135c3b14",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cpf/generate?quantity=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cpf",
+								"generate"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "5",
+									"description": "Number of CPFs to generate"
+								}
+							]
+						},
+						"description": "Generates multiple valid random CPF numbers"
+					},
+					"response": []
+				},
+				{
+					"name": "Validate CPF",
+					"id": "0338ca5f-3589-4730-962c-323f79947e73",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cpf\": \"123.456.789-09\"\n}"
+						},
+						"url": "{{baseUrl}}/cpf/validate",
+						"description": "Validates if a given CPF number is valid"
+					},
+					"response": []
+				},
+				{
+					"name": "Get CPF Info",
+					"id": "9e297187-9842-4232-9310-fe34adc43337",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/cpf/{{cpf}}",
+						"description": "Gets information about a specific CPF"
+					},
+					"response": []
+				}
+			],
+			"id": "71900d9c-d8c0-4056-a0d6-c1d2d4a16bea",
+			"description": "Endpoints for CPF generation and validation"
+		}
+	]
+}
